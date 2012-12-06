@@ -93,11 +93,20 @@ class Equipamento extends CActiveRecord
 	public function getTipoOptions()
 	{
 		return array(
-			'Nobreak'=>'Nobreak',
+			'Câmera Fotográfica'=>'Câmera Fotográfica',
+			'Computador'=>'Computador',
+			'Monitor'=>'Monitor',
+			'Notebook'=>'Notebook',
 			'Impressora Laser'=>'Impressora Laser',
 			'Impressora Matricial'=>'Impressora Matricial',
 			'Impressora Multifuncional'=>'Impressora Multifuncional',
+			'Nobreak'=>'Nobreak',
+			'PDA'=>'PDA',
+			'Scanner'=>'Scanner',
 			'Servidor'=>'Servidor',
+			'Estabilizador'=>'Estabilizador',
+			'Tablet'=>'Tablet',
+			'Webcam'=>'Webcam',
 		);
 	}
 	
