@@ -113,12 +113,13 @@ class Equipamento extends CActiveRecord
 	public function getMarcaOptions()
 	{
 		return array(
-			'Senium'=>'Senium',
-			'Ragtech'=>'Ragtech',
 			'Epson'=>'Epson',
-			'Samsung'=>'Samsung',
-			'SMS'=>'SMS',
 			'HP'=>'HP',
+			'Itautec'=>'Itautec',
+			'Ragtech'=>'Ragtech',
+			'Samsung'=>'Samsung',
+			'Senium'=>'Senium',
+			'SMS'=>'SMS',
 		);
 	}
 	
