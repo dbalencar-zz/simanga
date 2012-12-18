@@ -11,13 +11,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tipo'); ?>
-		<?php echo $form->dropDownList($model,'tipo',$model->tipoOptions); ?>
+		<?php echo $form->dropDownList($model,'tipo',equip_tipo::model()->listAll(),array(
+			'empty'=>'-- selecione --',
+		)); ?>
 		<?php echo $form->error($model,'tipo'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'marca'); ?>
-		<?php echo $form->dropDownList($model,'marca',$model->marcaOptions); ?>
+		<?php echo $form->dropDownList($model,'marca',equip_marca::model()->listAll(),array(
+			'empty'=>'-- selecione --',
+		)); ?>
 		<?php echo $form->error($model,'marca'); ?>
 	</div>
 
@@ -28,7 +32,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Adicionar' : 'Salvar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

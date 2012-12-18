@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "equipamento".
+ * This is the model class for table "equip_marca".
  *
- * The followings are the available columns in table 'equipamento':
- * @property integer $id
- * @property string $tipo
+ * The followings are the available columns in table 'equip_marca':
  * @property string $marca
- * @property string $modelo
+ *
+ * The followings are the available model relations:
+ * @property Equipamento[] $equipamentos
  */
-class Equipamento extends CActiveRecord
+class equip_marca extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Equipamento the static model class
+	 * @return equip_marca the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -26,7 +26,7 @@ class Equipamento extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'equipamento';
+		return 'equip_marca';
 	}
 
 	/**
@@ -37,11 +37,11 @@ class Equipamento extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tipo, marca, modelo', 'required'),
-			array('modelo', 'length', 'max'=>45),
+			array('marca', 'required'),
+			array('marca', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tipo, marca, modelo', 'safe', 'on'=>'search'),
+			array('marca', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,9 +53,7 @@ class Equipamento extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'it'=>array(self::HAS_MANY,'item','id'),
-			'ti'=>array(self::BELONGS_TO,'equip_tipo','tipo'),
-			'ma'=>array(self::BELONGS_TO,'equip_marca','marca'),
+			'equipamentos' => array(self::HAS_MANY, 'Equipamento', 'marca'),
 		);
 	}
 
@@ -65,10 +63,7 @@ class Equipamento extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'tipo' => 'Tipo',
 			'marca' => 'Marca',
-			'modelo' => 'Modelo',
 		);
 	}
 
@@ -82,30 +77,16 @@ class Equipamento extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		
-		$criteria->with=array('ti','ma');
 
-		$criteria->compare('t.tipo',$this->tipo);
-		$criteria->compare('t.marca',$this->marca);
-		$criteria->compare('modelo',$this->modelo,true);
+		$criteria->compare('marca',$this->marca,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 	
-	public function getEquipText()
-	{
-		return $this->ma->marca.' '.$this->modelo;
-	}
-	
-	public function getEquipamentoText()
-	{
-		return $this->ti->tipo.' '.$this->equipText;
-	}
-	
 	public function listAll()
 	{
-		return CHtml::listData($this->findAll(array('order'=>'tipo,marca,modelo')),'id','equipText','tipo');
+		return CHtml::listData($this->findAll(array('order'=>'marca')),'id','marca');
 	}
 }

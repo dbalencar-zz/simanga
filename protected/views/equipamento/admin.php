@@ -5,6 +5,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Adicionar Equipamento', 'url'=>array('create')),
+	array('label'=>'Tipos', 'url'=>array('/equipTipo')),
+	array('label'=>'Marcas', 'url'=>array('/equipMarca')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -29,12 +31,14 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
 	'columns'=>array(
 		array(
-			'filter'=>$model->tipoOptions,
+			'filter'=>equip_tipo::model()->listAll(),
             'name'=>'tipo',
+            'value'=>'$data->ti->tipo',
 		),
 		array(
-			'filter'=>$model->marcaOptions,
+			'filter'=>equip_marca::model()->listAll(),
             'name'=>'marca',
+            'value'=>'$data->ma->marca',
 		),
 		'modelo',
 		array(

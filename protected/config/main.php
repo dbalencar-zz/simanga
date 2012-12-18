@@ -34,6 +34,7 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			// enable cookie-based authentication
+			'class'=>'SimangaUser',
 			'allowAutoLogin'=>true,
 		),
 		'urlManager'=>array(
