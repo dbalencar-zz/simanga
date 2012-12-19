@@ -63,14 +63,14 @@ class UnidadeController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Unidade;
+		$model=new unidade;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Unidade']))
+		if(isset($_POST['unidade']))
 		{
-			$model->attributes=$_POST['Unidade'];
+			$model->attributes=$_POST['unidade'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +92,9 @@ class UnidadeController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Unidade']))
+		if(isset($_POST['unidade']))
 		{
-			$model->attributes=$_POST['Unidade'];
+			$model->attributes=$_POST['unidade'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -129,7 +129,7 @@ class UnidadeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Unidade');
+		$dataProvider=new CActiveDataProvider('unidade');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -140,10 +140,10 @@ class UnidadeController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Unidade('search');
+		$model=new unidade('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Unidade']))
-			$model->attributes=$_GET['Unidade'];
+		if(isset($_GET['unidade']))
+			$model->attributes=$_GET['unidade'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -157,7 +157,7 @@ class UnidadeController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Unidade::model()->findByPk($id);
+		$model=unidade::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

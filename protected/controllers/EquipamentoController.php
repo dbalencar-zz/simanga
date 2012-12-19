@@ -63,14 +63,14 @@ class EquipamentoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Equipamento;
+		$model=new equipamento;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Equipamento']))
+		if(isset($_POST['equipamento']))
 		{
-			$model->attributes=$_POST['Equipamento'];
+			$model->attributes=$_POST['equipamento'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +92,9 @@ class EquipamentoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Equipamento']))
+		if(isset($_POST['equipamento']))
 		{
-			$model->attributes=$_POST['Equipamento'];
+			$model->attributes=$_POST['equipamento'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -129,10 +129,10 @@ class EquipamentoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Equipamento('search');
+		$model=new equipamento('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Equipamento']))
-			$model->attributes=$_GET['Equipamento'];
+		if(isset($_GET['equipamento']))
+			$model->attributes=$_GET['equipamento'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -146,7 +146,7 @@ class EquipamentoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Equipamento::model()->findByPk($id);
+		$model=equipamento::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

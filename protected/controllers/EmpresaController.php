@@ -63,14 +63,14 @@ class EmpresaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Empresa;
+		$model=new empresa;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Empresa']))
+		if(isset($_POST['empresa']))
 		{
-			$model->attributes=$_POST['Empresa'];
+			$model->attributes=$_POST['empresa'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +92,9 @@ class EmpresaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Empresa']))
+		if(isset($_POST['empresa']))
 		{
-			$model->attributes=$_POST['Empresa'];
+			$model->attributes=$_POST['empresa'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -129,10 +129,10 @@ class EmpresaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Empresa('search');
+		$model=new empresa('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Empresa']))
-			$model->attributes=$_GET['Empresa'];
+		if(isset($_GET['empresa']))
+			$model->attributes=$_GET['empresa'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -146,7 +146,7 @@ class EmpresaController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Empresa::model()->findByPk($id);
+		$model=empresa::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

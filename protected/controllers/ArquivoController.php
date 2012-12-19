@@ -62,14 +62,14 @@ class ArquivoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Arquivo;
+		$model=new arquivo;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Arquivo']))
+		if(isset($_POST['arquivo']))
 		{
-			$model->attributes=$_POST['Arquivo'];
+			$model->attributes=$_POST['arquivo'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class ArquivoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Arquivo']))
+		if(isset($_POST['arquivo']))
 		{
-			$model->attributes=$_POST['Arquivo'];
+			$model->attributes=$_POST['arquivo'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -128,10 +128,10 @@ class ArquivoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Arquivo('search');
+		$model=new arquivo('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Arquivo']))
-			$model->attributes=$_GET['Arquivo'];
+		if(isset($_GET['arquivo']))
+			$model->attributes=$_GET['arquivo'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -145,7 +145,7 @@ class ArquivoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Arquivo::model()->findByPk($id);
+		$model=arquivo::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

@@ -36,12 +36,12 @@ $('.search-form form').submit(function(){
 		),
 		'equipamentoText',
 		array(	
-			'filter'=>Unidade::model()->listAll(),
+			'filter'=>unidade::model()->listAll(),
             'name'=>'unidade',
             'value'=>'$data->un->nome',
 		),
 		array(
-			'filter'=>Empresa::model()->listAll(),
+			'filter'=>empresa::model()->listAll(),
             'name'=>'empresa',
             'value'=>'$data->em->nome',
 		),

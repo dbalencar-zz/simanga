@@ -63,14 +63,14 @@ class ItemController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Item;
+		$model=new item;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Item']))
+		if(isset($_POST['item']))
 		{
-			$model->attributes=$_POST['Item'];
+			$model->attributes=$_POST['item'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +92,9 @@ class ItemController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Item']))
+		if(isset($_POST['item']))
 		{
-			$model->attributes=$_POST['Item'];
+			$model->attributes=$_POST['item'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -129,10 +129,10 @@ class ItemController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Item('search');
+		$model=new item('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Item']))
-			$model->attributes=$_GET['Item'];
+		if(isset($_GET['item']))
+			$model->attributes=$_GET['item'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -146,7 +146,7 @@ class ItemController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Item::model()->findByPk($id);
+		$model=item::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

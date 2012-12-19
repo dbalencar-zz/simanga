@@ -63,14 +63,14 @@ class ChamadoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Chamado;
+		$model=new chamado;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Chamado']))
+		if(isset($_POST['chamado']))
 		{
-			$model->attributes=$_POST['Chamado'];
+			$model->attributes=$_POST['chamado'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +92,9 @@ class ChamadoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Chamado']))
+		if(isset($_POST['chamado']))
 		{
-			$model->attributes=$_POST['Chamado'];
+			$model->attributes=$_POST['chamado'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -129,7 +129,7 @@ class ChamadoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Chamado');
+		$dataProvider=new CActiveDataProvider('chamado');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -140,10 +140,10 @@ class ChamadoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Chamado('search');
+		$model=new chamado('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Chamado']))
-			$model->attributes=$_GET['Chamado'];
+		if(isset($_GET['chamado']))
+			$model->attributes=$_GET['chamado'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -157,7 +157,7 @@ class ChamadoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Chamado::model()->findByPk($id);
+		$model=chamado::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -184,7 +184,7 @@ class ChamadoController extends Controller
 		// $this->performAjaxValidation($model);
 		
 		$model->fechamento=new CDbExpression('NOW()');
-		$model->estado=Chamado::FECHADO;
+		$model->estado=chamado::FECHADO;
 		if($model->save())
 			$this->redirect(array('view','id'=>$model->id));
 		
