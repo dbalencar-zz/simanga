@@ -6,22 +6,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Adicionar Item', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('item-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Items</h1>
+<h1>Itens</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'item-grid',

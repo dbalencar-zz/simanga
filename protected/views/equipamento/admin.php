@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'Tipos', 'url'=>array('/equipTipo')),
 	array('label'=>'Marcas', 'url'=>array('/equipMarca')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('equipamento-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Equipamentos</h1>
