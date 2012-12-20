@@ -11,7 +11,7 @@
  * @property integer $num_man
  * @property string $obs
  */
-class Item extends CActiveRecord
+class item extends CActiveRecord
 {
 	private $_equipamentoText = null;
 	

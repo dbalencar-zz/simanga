@@ -7,7 +7,7 @@
  * @property integer $id
  * @property string $nome
  */
-class Unidade extends CActiveRecord
+class unidade extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

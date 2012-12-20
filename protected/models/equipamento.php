@@ -9,7 +9,7 @@
  * @property string $marca
  * @property string $modelo
  */
-class Equipamento extends CActiveRecord
+class equipamento extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

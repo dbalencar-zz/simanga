@@ -10,7 +10,7 @@
  * @property integer $size
  * @property string $content
  */
-class Arquivo extends CActiveRecord
+class arquivo extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

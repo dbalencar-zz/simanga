@@ -13,7 +13,7 @@
  * @property string $fechamento
  * @property string $user
  */
-class Chamado extends CActiveRecord
+class chamado extends CActiveRecord
 {
 	private $_equipamentoText = null;
 	

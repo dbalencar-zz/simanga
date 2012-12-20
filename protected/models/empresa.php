@@ -9,7 +9,7 @@
  * @property string $telefone
  * @property string $contato
  */
-class Empresa extends CActiveRecord
+class empresa extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
