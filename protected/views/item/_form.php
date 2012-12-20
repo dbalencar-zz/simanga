@@ -11,13 +11,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nf'); ?>
-		<?php echo $form->dropDownList($model,'nf',Arquivo::model()->listAll(),array('empty'=>'-- selecione --')); ?>
+		<?php echo $form->dropDownList($model,'nf',arquivo::model()->listAll(),array('empty'=>'-- selecione --')); ?>
 		<?php echo $form->error($model,'nf'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'equipamento'); ?>
-		<?php echo $form->dropDownList($model,'equipamento',Equipamento::model()->listAll(),array('empty'=>'-- selecione --')); ?>
+		<?php echo $form->dropDownList($model,'equipamento',equipamento::model()->listAll(),array('empty'=>'-- selecione --')); ?>
 		<?php echo $form->error($model,'equipamento'); ?>
 	</div>
 

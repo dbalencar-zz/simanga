@@ -168,7 +168,7 @@ class InternoController extends Controller
 		// $this->performAjaxValidation($model);
 	
 		$model->fechamento=new CDbExpression('NOW()');
-		$model->estado=Chamado::FECHADO;
+		$model->estado=chamado::FECHADO;
 		if($model->save())
 			$this->redirect(array('view','id'=>$model->id));
 	
