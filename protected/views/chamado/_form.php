@@ -11,19 +11,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'unidade'); ?>
-		<?php echo $form->dropDownList($model,'unidade',Unidade::model()->listAll(),array('empty'=>'-- selecione --')); ?>
+		<?php echo $form->dropDownList($model,'unidade',unidade::model()->listAll(),array('empty'=>'-- selecione --')); ?>
 		<?php echo $form->error($model,'unidade'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'item'); ?>
-		<?php echo $form->dropDownList($model,'item',Item::model()->listAll(),array('empty'=>'-- selecione --')); ?>
+		<?php echo $form->dropDownList($model,'item',item::model()->listAll(),array('empty'=>'-- selecione --')); ?>
 		<?php echo $form->error($model,'item'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'empresa'); ?>
-		<?php echo $form->dropDownList($model,'empresa',Empresa::model()->listAll(),array('empty'=>'-- selecione --')); ?>
+		<?php echo $form->dropDownList($model,'empresa',empresa::model()->listAll(),array('empty'=>'-- selecione --')); ?>
 		<?php echo $form->error($model,'empresa'); ?>
 	</div>
 
