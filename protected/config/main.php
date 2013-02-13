@@ -9,8 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'SIMANGA',
 	
-	'language'=>'pt_br',
-	'sourceLanguage'=>'pt_br',
+	'language'=>'pt_BR',
+	'timezone'=>'America/Manaus',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
