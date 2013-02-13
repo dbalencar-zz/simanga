@@ -28,7 +28,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Página Inicial', 'url'=>array('/site/index')),
+				array('label'=>'Página Inicial', 'url'=>array('//')),
 				array('label'=>'Técnicos', 'url'=>array('/tecnico'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Unidades', 'url'=>array('/unidade'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Arquivos', 'url'=>array('/arquivo'), 'visible'=>!Yii::app()->user->isGuest),
