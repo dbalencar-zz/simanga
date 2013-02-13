@@ -106,6 +106,6 @@ class equipamento extends CActiveRecord
 	
 	public function listAll()
 	{
-		return CHtml::listData($this->findAll(array('order'=>'tipo,marca,modelo')),'id','equipText','tipo');
+		return CHtml::listData($this->findAll(array('order'=>'tipo,marca,modelo')),'id','equipText','ti.tipo');
 	}
 }
