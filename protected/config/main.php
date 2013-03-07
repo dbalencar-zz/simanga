@@ -9,6 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'SIMANGA',
 	
+	'sourceLanguage'=>'en_US',
 	'language'=>'pt_BR',
 	'timezone'=>'America/Manaus',
 
