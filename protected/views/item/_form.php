@@ -25,12 +25,22 @@
 		<?php echo $form->labelEx($model,'tombo'); ?>
 		<?php echo $form->textField($model,'tombo',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'tombo'); ?>
+		<?php echo $form->checkBox($model, 'tombo'); ?>
+		<?php echo CHtml::label('Sem Tombo', 'tombo', array(
+				'value'=>'N/A',
+				'style'=>'display: inline; vertical-align: text-top',
+		)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'serial'); ?>
 		<?php echo $form->textField($model,'serial',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'serial'); ?>
+		<?php echo $form->checkBox($model, 'serial'); ?>
+		<?php echo CHtml::label('Sem Serial', 'serial', array(
+				'value'=>'N/A',
+				'style'=>'display: inline; vertical-align: text-top',
+		)); ?>
 	</div>
 
 	<div class="row">
