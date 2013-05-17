@@ -11,6 +11,7 @@ return array(
 	
 	'sourceLanguage'=>'en_US',
 	'language'=>'pt_BR',
+		
 	'timezone'=>'America/Manaus',
 
 	// preloading 'log' component
