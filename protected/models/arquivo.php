@@ -40,6 +40,7 @@ class arquivo extends CActiveRecord
 		return array(
 			array('type','required'),
 			array('content','file','types'=>'pdf','maxSize'=>16777216),
+			array('emissao, garantia','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, type, emissao, garantia', 'safe', 'on'=>'search'),
