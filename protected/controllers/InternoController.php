@@ -34,7 +34,7 @@ class InternoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','create','update','fechar'),
+				'actions'=>array('admin','create','update','print','fechar'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -173,5 +173,13 @@ class InternoController extends Controller
 			$this->redirect(array('view','id'=>$model->id));
 	
 		$this->render('view',array('model'=>$model));
+	}
+	
+	public function actionPrint($id)
+	{
+		$this->layout='chamado';
+		$this->render('print',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 }
