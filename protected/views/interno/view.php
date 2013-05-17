@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Abrir Interno', 'url'=>array('create')),
 	array('label'=>'Editar Interno', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Imprimir Interno', 'url'=>array('print', 'id'=>$model->id)),		
+	array('label'=>'Imprimir Interno', 'url'=>array('print', 'id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),		
 	array('label'=>'Fechar Interno', 'url'=>'#', 'linkOptions'=>array('submit'=>array('fechar','id'=>$model->id),'confirm'=>'Confirma o Fechamento?'), 'visible'=>$model->estado!==interno::FECHADO),
 	array('label'=>'Excluir Interno', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Confirma a exclusão?')),
 );
