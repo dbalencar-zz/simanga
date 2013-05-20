@@ -22,7 +22,10 @@ class UserIdentity extends CUserIdentity
 			'jack'=>'jack',
 			'bruno'=>'bruno',
 			'douglas'=>'douglas',
-			'catunda'=>'catunda',
+			'alyne'=>'alyne',
+			'leyverton'=>'leyverton',
+			'fabio'=>'fabio',
+			'sergio'=>'sergio',
 			'admin'=>'admin',
 		);
 		if(!isset($users[$this->username]))
