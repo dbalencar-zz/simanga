@@ -41,7 +41,7 @@ class item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nf, equipamento', 'required'),
+			array('nf, equipamento, tombo, serial', 'required'),
 			array('tombo','unique','criteria'=>array(
 				'condition'=>'`serial`=:serial',
 				'params'=>array(':serial'=>$this->serial)
