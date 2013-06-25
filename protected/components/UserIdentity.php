@@ -17,25 +17,11 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'admin'=>'admin',
-			'bruno'=>'bruno',
-			'douglas'=>'douglas',
-			'jack'=>'jack',
-			'catunda'=>'catunda',
-			'adriano'=>'adriano',
-			'daniel'=>'daniel',
-			'edenilson'=>'edenilson',
-			'erickson'=>'erickson',
-			'fabio'=>'fabio',
-			'leyverton'=>'leyverton',
-			'pedro'=>'pedro',
-			'sergio'=>'sergio',
-		);
-		if(!isset($users[$this->username]))
+		$user=tecnico::model()->findByAttributes(array('username'=>$this->username));
+		
+		if(!isset($user))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($users[$this->username]!==$this->password)
+		else if($user->password!==md5($this->password))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 			$this->errorCode=self::ERROR_NONE;

@@ -38,6 +38,7 @@
 				array('label'=>'Chamados', 'url'=>array('/chamado'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Internos', 'url'=>array('/interno'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Senha', 'url'=>array('/tecnico/senha'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>

@@ -30,16 +30,12 @@ class TecnicoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','create','update'),
+				'actions'=>array('admin','view','senha'),
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete'),
-				'users'=>array('admin'),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update','delete'),
+				'users'=>array('dbalencar'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -156,6 +152,24 @@ class TecnicoController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+	
+	public function actionSenha()
+	{
+		$model=tecnico::model()->findByAttributes(array('username'=>Yii::app()->user->id));
+		$model->setScenario('senha');
+		
+		if(isset($_POST['tecnico']))
+		{
+			$model->attributes=$_POST['tecnico'];
+			
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('senha',array(
+				'model'=>$model,
+		));
 	}
 
 	/**

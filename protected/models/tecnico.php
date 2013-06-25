@@ -10,6 +10,8 @@
  */
 class tecnico extends CActiveRecord
 {
+	public $_password=null;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -42,6 +44,8 @@ class tecnico extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nome, telefone', 'safe', 'on'=>'search'),
+			array('password, _password','required','on'=>'senha'),
+			array('password','compare','compareAttribute'=>'_password','on'=>'senha'),
 		);
 	}
 
@@ -65,6 +69,8 @@ class tecnico extends CActiveRecord
 			'id' => 'ID',
 			'nome' => 'Nome',
 			'telefone' => 'Telefone',
+			'password' => 'Senha',
+			'_password' => 'Confirmação',
 		);
 	}
 
@@ -91,5 +97,15 @@ class tecnico extends CActiveRecord
 	public function listAll()
 	{
 		return CHtml::listData($this->findAll(array('order'=>'nome')),'id','nome');
+	}
+	
+	public function get_password()
+	{
+		return $this->_password;
+	}
+	
+	public function set_password($_password)
+	{
+		$this->_password=$_password;
 	}
 }

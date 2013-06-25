@@ -38,7 +38,7 @@ class EquipamentoController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('delete'),
-				'users'=>array('admin'),
+				'users'=>array('dbalencar'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
