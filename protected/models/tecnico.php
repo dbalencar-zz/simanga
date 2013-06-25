@@ -108,4 +108,10 @@ class tecnico extends CActiveRecord
 	{
 		$this->_password=$_password;
 	}
+	
+	public function beforeSave()
+	{
+		$this->password=md5($this->password);
+		return parent::beforeSave();
+	}
 }
